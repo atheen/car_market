@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+	Create
+{% endblock title %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-12" style="color:white;">
+      <div class="jumbotron jumbotron-fluid transperant shadow-lg" >
+        <form action="{% url 'car-create' %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{form|crispy}}
+          <input class="btn btn-outline-light text-light btn-block" type="submit" value="Create">
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

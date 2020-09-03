@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Car Detail</title>
-</head>
-<body>
-		<h1>
-			{{car.make}} - {{car.model}}
-			<small>
-				{{car.year}}
-			</small>
-		</h1>
-		<hr>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}
+	Car Detail
+{% endblock title %}
+
+{% block content %}
+<div class="card bg-dark text-white shadow-lg">
+	<img src="{{car.img.url}}" class="card-img" alt="{{car.make}} - {{car.model}}">
+	<div class="card-img-overlay">
+		<h1 class="card-title display-1 font-weight-bold text-center">{{car.make}} - {{car.model}}</h1>
+		<h3 class="card-text text-center">{{car.year}}</h3>
+		<div class="text-center">
+			<p>Something's wrong with these information?</p>
+			<p>Go ahead and fix it.</p>
+			<a href="{% url 'car-update' car.id %}" class="btn btn-outline-light text-light btn-block">Update</a>
+			<a href="{% url 'car-delete' car.id %}" class="btn btn-outline-light text-light btn-block">Delete</a>
+		</div>
+	</div>
+</div>
+{% endblock content %}
