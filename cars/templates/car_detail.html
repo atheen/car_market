@@ -6,7 +6,9 @@
 
 {% block content %}
 <div class="card bg-dark text-white shadow-lg">
-	<img src="{{car.img.url}}" class="card-img" alt="{{car.make}} - {{car.model}}">
+	{% if car.img %}
+		<img src="{{car.img.url}}" class="card-img" alt="{{car.make}} - {{car.model}}">
+	{% endif %}
 	<div class="card-img-overlay">
 		<h1 class="card-title display-1 font-weight-bold text-center">{{car.make}} - {{car.model}}</h1>
 		<h3 class="card-text text-center">{{car.year}}</h3>

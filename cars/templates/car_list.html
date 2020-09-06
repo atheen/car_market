@@ -9,7 +9,9 @@
 	<br>
 	<div class="card card-cascade wider reverse shadow-lg">
   	<div class="view view-cascade overlay">
-    	<img class="card-img-top" src="{{car.img.url}}" alt="{{car.make}} - {{car.model}}">
+			{% if car.img %}
+    		<img class="card-img-top" src="{{car.img.url}}" alt="{{car.make}} - {{car.model}}">
+			{% endif %}
   	</div>
   	<div class="card-body card-body-cascade text-center text-dark">
     	<h4 class="card-title"><strong>{{car.make}} - {{car.model}}</strong></h4>
